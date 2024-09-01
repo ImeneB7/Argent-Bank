@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Profile from '../pages/Profile';
 import NotFound404 from '../pages/NotFound404';
+import ProtectedRoute from '../components/ProtectedRoute'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path="/login" element={<Login/>} />
-        <Route path='/profile' element={<Profile/>} />
+        <Route path='/profile' element={<ProtectedRoute><Profile/></ProtectedRoute>} />
         <Route path='*' element={<NotFound404/>} />
       </Routes>
     </Router>
